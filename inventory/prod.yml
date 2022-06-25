@@ -1,0 +1,7 @@
+---
+clickhouse:
+  hosts:
+    clickhouse-01:
+      ansible_host: 84.252.140.96
+  vars:
+     ansible_user: anton

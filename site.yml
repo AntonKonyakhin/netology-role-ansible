@@ -1,0 +1,27 @@
+---
+  - name: install clickhose vector
+    hosts: clickhouse
+    handlers:
+      - name: nginx-start
+        become: true
+        command: service nginx start
+      - name: nginx-reload
+        become: true
+        command: nginx -s reload
+
+    pre_tasks:
+      - name: install git
+        become: true
+        ansible.builtin.apt:
+          name: git
+          state: present
+      - name: install nginx
+        become: true
+        ansible.builtin.apt:
+          name: nginx
+          state: present
+        notify: nginx-start
+    roles: 
+      - clickhouse
+      - vector-role
+      - lighthouse       
