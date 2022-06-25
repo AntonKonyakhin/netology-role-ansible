@@ -5,7 +5,9 @@
     name: clickhouse
   - src: git@github.com:AntonKonyakhin/netology-vector-role.git
     scm: git
+    name: vector-role
     version: "1.0.0"
   - src: git@github.com:AntonKonyakhin/netology-role-lighthouse.git
     scm: git
     version: "1.0.0"
+    name: lighthouse
