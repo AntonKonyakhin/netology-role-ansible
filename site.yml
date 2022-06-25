@@ -5,9 +5,6 @@
       - name: nginx-start
         become: true
         command: service nginx start
-      - name: nginx-reload
-        become: true
-        command: nginx -s reload
 
     pre_tasks:
       - name: install git
